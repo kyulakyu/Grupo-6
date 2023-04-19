@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* incluye valores de padding y border dentro del tamaño de la box, no por fuera. */
+}
+
+/* || GENERAL STYLES */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* Para que tenga formato vertical */
+}
+
+h1 {
+  color: red;
+  padding: 7px;
+}
+h2 {
+  color:#4b9e9a;
+  padding: 15px;
+}
+
+header,
+nav,
+main,
+footer {
+  display: grid;
+  place-content: center;
+  /* centra texto */
+  grid-template-columns: 100%;
+  /* abarca toda la extensión de la columna */
+  text-align: center;
+}
+
+nav,
+footer {
+  position: sticky;
+  background-color: #4b9e9a;
+  color: black;
+}
+
+nav {
+  top: 0;
+  padding-top: 3px;
+  padding-bottom: 5px;
+}
+
+header {
+  padding: 10px;  
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  padding-top: 5px;
+  padding-bottom: 3px;
+  bottom: 0;
+}
+
+form {
+  text-align: center;
+  min-height: 100vh;
+  margin: 20px;
+  font-weight: bold
+}
+
+.imagen{
+  width: 100%;
+}
+.imagen img{
+  width: 70%;
+  padding: 0;
+  /* Espaciado */
+  border: 3px solid black;
+}
+.galeria{
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.foto img {
+  margin-left: auto;
+  /* Para centrar la img */
+  margin-right: auto;
+  /* Para centrar la img */
+  max-width: 50%;
+  /* Para que se ajuste al tamaño del dispositivo */
+  height: auto;
+  padding: 0;
+  /* Espaciado */
+  border: 3px solid black;
+}
+
+.wrap {
+  margin-left: auto;
+  /* Para centrar la img */
+  margin-right: auto;
+  /* Para centrar la img */
+  max-width: 100%;
+  /* Para que se ajuste al tamaño del dispositivo */
+  height: auto;
+  padding: 0;
+  /* Espaciado */
+}
+
+  /* Estilos para moviles */
+
+@media (max-width:768px){
+  .galeria{
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+    /* Estilos para tablets */
+@media (min-width:768px){
+  .galeria{
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+    /* Estilos para Computadoras y Notebooks */
+@media (min-width:1200px){
+  .galeria{
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
